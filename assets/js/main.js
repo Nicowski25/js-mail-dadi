@@ -24,6 +24,24 @@ emailCheck.addEventListener('click',
         }
     }
 )
+
 //troviamo il bottone play nella dom
 const playButton = document.getElementById("play")
 //alla click sul bottone iniziamo la nostra funzione
+playButton.addEventListener('click',
+    function () {
+        //attribuiamo un valore da 1 a 6 alle variabili
+        let userRand = (Math.floor(Math.random() * 6) + 1);
+        let computerRand = (Math.floor(Math.random() * 6) + 1);
+        //controlliamo e stampiamo chi ha vinto e di quanto
+        if (userRand > computerRand) {
+            alert(`hai vinto, il tuo dado ha fatto ${userRand} contro il ${computerRand} del computer`)
+            console.log('ha vinto l\'utente');
+        } else if (userRand < computerRand) {
+            alert(`hai perso, il tuo dado ha fatto ${userRand} contro il ${computerRand} del computer`)
+            console.log('ha vinto il computer');
+        } else {
+            alert('hai pareggiato')
+        }
+    }
+)
