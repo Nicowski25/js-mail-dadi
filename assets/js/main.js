@@ -7,23 +7,30 @@ const emailAllowed = [
 console.log(emailAllowed);
 //creiamo la variabile che punta al button emailcheck
 const emailCheck = document.getElementById("emailCheck")
+//creiamo una variabile true/false per vedere se è in lista o no
+let access = false
 //al click sul bottone controlliamo se è l'email è in lista
 emailCheck.addEventListener('click',
     function () {
         //prendiamo la mail inserita nell'input
         const emailUser = document.getElementById("email").value
         console.log(emailUser);
-        for (let i = 0; i < emailAllowed.length; i++) {
-                if (emailAllowed[i] == emailUser) {
-                    alert('l\'email ha il permesso')
-                    console.log('permesso');
-                    break
-                } else {
-                    console.log('non ha il permesso');
-                }
-        }
+            for (let i = 0; i < emailAllowed.length; i++) {
+                    if (emailAllowed[i] == emailUser) {
+                        let access = true;
+                        console.log('ha il permesso');
+                    } else {
+                        console.log('non ha permesso');
+                    }
+            }
     }
 )
+//stampiamo se la mail ha il permesso o no
+if (access = true) {
+    console.log('permesso');
+} else {
+    console.log('non ha il permesso');
+}
 
 //troviamo il bottone play nella dom
 const playButton = document.getElementById("play")
